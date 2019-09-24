@@ -73,6 +73,12 @@
 				<version>${project.custom.globalpom.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>com.anrisoftware.globalpom</groupId>
+				<artifactId>globalpomutils-exec</artifactId>
+				<version>${project.custom.globalpom.version}</version>
+				<type>bundle</type>
+			</dependency>
+			<dependency>
 				<groupId>com.orientechnologies</groupId>
 				<artifactId>orientdb-client</artifactId>
 				<version>${project.custom.orientdb.version}</version>
@@ -95,7 +101,7 @@
 			<dependency>
 				<groupId>com.orientechnologies</groupId>
 				<artifactId>orientdb-spatial</artifactId>
-				<version>2.2.37</version>
+				<version>${project.custom.orientdb.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>net.java.dev.jna</groupId>
@@ -121,6 +127,11 @@
 				<groupId>co.paralleluniverse</groupId>
 				<artifactId>quasar-core</artifactId>
 				<version>0.8.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.json</groupId>
+				<artifactId>json</artifactId>
+				<version>20190722</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
