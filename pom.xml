@@ -221,8 +221,8 @@
 			    <artifactId>commons-collections4</artifactId>
 			    <version>4.4</version>
 			</dependency>
-			<!-- Needed for MBox -->
             <dependency>
+				<!-- Needed for MBox -->
                 <groupId>com.simsilica</groupId>
                 <artifactId>lemur</artifactId>
                 <version>1.13.0</version>
@@ -231,6 +231,11 @@
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
 				<version>1.18.10</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.lable.oss.uniqueid</groupId>
+			    <artifactId>uniqueid-core</artifactId>
+			    <version>2.5</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
