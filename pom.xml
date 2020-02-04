@@ -166,6 +166,11 @@
 	            <artifactId>jme3-terrain</artifactId>
                 <version>${project.custom.jme3.version}</version>
 	        </dependency>
+	        <dependency>
+	            <groupId>org.jmonkeyengine</groupId>
+	            <artifactId>jme3-bullet</artifactId>
+                <version>${project.custom.jme3.version}</version>
+	        </dependency>
 			<dependency>
 				<groupId>com.jayfella</groupId>
 				<artifactId>jme-jfx-11</artifactId>
