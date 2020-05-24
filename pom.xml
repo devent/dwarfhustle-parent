@@ -25,8 +25,8 @@
 
 	<parent>
 		<groupId>com.anrisoftware.globalpom</groupId>
-		<artifactId>globalpom-groovy-osgi</artifactId>
-		<version>4.5.1</version>
+		<artifactId>globalpom-groovy</artifactId>
+		<version>4.5.2-SNAPSHOT</version>
 	</parent>
 
 	<groupId>com.anrisoftware.dwarfhustle</groupId>
@@ -61,7 +61,7 @@
 
 	<properties>
 		<license.custom.license.template>com/mycila/maven/plugin/license/templates/GPL-3.txt</license.custom.license.template>
-		<project.custom.globalpom.version>4.5.1</project.custom.globalpom.version>
+		<project.custom.globalpom.version>4.5.2-SNAPSHOT</project.custom.globalpom.version>
 		<project.custom.orientdb.version>3.0.26</project.custom.orientdb.version>
 		<project.custom.jme3.version>3.2.4-stable</project.custom.jme3.version>
 		<project.custom.javafx.version>11.0.2</project.custom.javafx.version>
