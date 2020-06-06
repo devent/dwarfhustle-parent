@@ -81,13 +81,38 @@
                 <version>${project.custom.globalpom.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.anrisoftware.globalpom</groupId>
+                <artifactId>globalpomutils-threads</artifactId>
+                <version>${project.custom.globalpom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anrisoftware.globalpom</groupId>
+                <artifactId>globalpom-log</artifactId>
+                <version>${project.custom.globalpom.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.anrisoftware.resources</groupId>
                 <artifactId>resources-texts</artifactId>
                 <version>${project.custom.globalpom.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.anrisoftware.propertiesutils</groupId>
+                <artifactId>propertiesutils-contextproperties</artifactId>
+                <version>${project.custom.globalpom.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.anrisoftware.resources</groupId>
                 <artifactId>resources-images</artifactId>
+                <version>${project.custom.globalpom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anrisoftware.resources</groupId>
+                <artifactId>resources-api</artifactId>
+                <version>${project.custom.globalpom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anrisoftware.resources</groupId>
+                <artifactId>resources-getbundle</artifactId>
                 <version>${project.custom.globalpom.version}</version>
             </dependency>
             <dependency>
@@ -260,6 +285,11 @@
                 <groupId>org.eclipse.collections</groupId>
                 <artifactId>eclipse-collections</artifactId>
                 <version>10.2.0</version>
+            </dependency>
+            <dependency>
+                <groupId>name.falgout.jeffrey.testing.junit5</groupId>
+                <artifactId>guice-extension</artifactId>
+                <version>1.2.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
