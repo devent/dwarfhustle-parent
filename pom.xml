@@ -301,6 +301,11 @@
                 <artifactId>guice-extension</artifactId>
                 <version>1.2.1</version>
             </dependency>
+            <dependency>
+                <groupId>org.shredzone.commons</groupId>
+                <artifactId>commons-suncalc</artifactId>
+                <version>3.3</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
