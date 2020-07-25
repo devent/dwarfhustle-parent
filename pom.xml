@@ -62,7 +62,7 @@
     <properties>
         <license.custom.license.template>com/mycila/maven/plugin/license/templates/GPL-3.txt</license.custom.license.template>
         <project.custom.globalpom.version>4.5.2</project.custom.globalpom.version>
-        <project.custom.orientdb.version>3.0.32</project.custom.orientdb.version>
+        <project.custom.orientdb.version>3.0.31</project.custom.orientdb.version>
         <project.custom.jme3.version>3.2.4-stable</project.custom.jme3.version>
         <project.custom.javafx.version>11.0.2</project.custom.javafx.version>
         <project.custom.fasterxml.version>2.11.0</project.custom.fasterxml.version>
