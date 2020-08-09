@@ -116,6 +116,11 @@
                 <version>${project.custom.globalpom.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.anrisoftware.resources</groupId>
+                <artifactId>resources-binary</artifactId>
+                <version>${project.custom.globalpom.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.orientechnologies</groupId>
                 <artifactId>orientdb-client</artifactId>
                 <version>${project.custom.orientdb.version}</version>
@@ -253,7 +258,7 @@
             <dependency>
                 <groupId>org.greenrobot</groupId>
                 <artifactId>eventbus</artifactId>
-                <version>3.1.1</version>
+                <version>3.2.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -305,6 +310,21 @@
                 <groupId>org.shredzone.commons</groupId>
                 <artifactId>commons-suncalc</artifactId>
                 <version>3.3</version>
+            </dependency>
+            <dependency>
+                <groupId>tech.units</groupId>
+                <artifactId>indriya</artifactId>
+                <version>2.0.4</version>
+            </dependency>
+            <dependency>
+                <groupId>tech.uom.lib</groupId>
+                <artifactId>uom-lib</artifactId>
+                <version>2.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>tech.uom.lib</groupId>
+                <artifactId>uom-lib-common</artifactId>
+                <version>2.0.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
