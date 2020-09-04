@@ -66,6 +66,7 @@
         <project.custom.jme3.version>3.2.4-stable</project.custom.jme3.version>
         <project.custom.javafx.version>11.0.2</project.custom.javafx.version>
         <project.custom.fasterxml.version>2.11.0</project.custom.fasterxml.version>
+        <project.custom.lombok.version>1.18.10</project.custom.lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -77,17 +78,17 @@
             </dependency>
             <dependency>
                 <groupId>com.anrisoftware.globalpom</groupId>
+                <artifactId>globalpom-log</artifactId>
+                <version>${project.custom.globalpom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anrisoftware.globalpom</groupId>
                 <artifactId>globalpomutils-exec</artifactId>
                 <version>${project.custom.globalpom.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.anrisoftware.globalpom</groupId>
                 <artifactId>globalpomutils-threads</artifactId>
-                <version>${project.custom.globalpom.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.anrisoftware.globalpom</groupId>
-                <artifactId>globalpom-log</artifactId>
                 <version>${project.custom.globalpom.version}</version>
             </dependency>
             <dependency>
@@ -207,6 +208,16 @@
             </dependency>
             <dependency>
                 <groupId>org.jmonkeyengine</groupId>
+                <artifactId>jme3-bullet-native</artifactId>
+                <version>${project.custom.jme3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jmonkeyengine</groupId>
+                <artifactId>jme3-jbullet</artifactId>
+                <version>${project.custom.jme3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jmonkeyengine</groupId>
                 <artifactId>jme3-testdata</artifactId>
                 <version>${project.custom.jme3.version}</version>
             </dependency>
@@ -278,18 +289,12 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.10</version>
+                <version>${project.custom.lombok.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.lable.oss.uniqueid</groupId>
                 <artifactId>uniqueid-core</artifactId>
                 <version>2.5</version>
-            </dependency>
-            <dependency>
-                <!-- Int to Object map -->
-                <groupId>it.unimi.dsi</groupId>
-                <artifactId>fastutil</artifactId>
-                <version>8.3.0</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.collections</groupId>
@@ -332,6 +337,37 @@
     <build>
         <plugins>
             <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <compilerId>groovy-eclipse-compiler</compilerId>
+                    <source>${project.custom.source.source}</source>
+                    <target>${project.custom.source.target}</target>
+                    <compilerId>groovy-eclipse-compiler</compilerId>
+                    <verbose>true</verbose>
+                    <compilerArguments>
+                        <javaAgentClass>lombok.launch.Agent</javaAgentClass>
+                    </compilerArguments>
+                    <fork>true</fork>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                        <version>${project.custom.lombok.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-compiler</artifactId>
+                        <version>${project.custom.groovy-eclipse-compiler.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-batch</artifactId>
+                        <version>${project.custom.groovy-eclipse-batch.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok-maven-plugin</artifactId>
                 <version>1.18.10.0</version>
@@ -343,6 +379,24 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <doclint>none</doclint>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doclint>none</doclint>
+                    <failOnError>false</failOnError>
+                </configuration>
             </plugin>
         </plugins>
     </build>
