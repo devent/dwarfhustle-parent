@@ -67,6 +67,8 @@
         <project.custom.javafx.version>11.0.2</project.custom.javafx.version>
         <project.custom.fasterxml.version>2.11.0</project.custom.fasterxml.version>
         <project.custom.lombok.version>1.18.10</project.custom.lombok.version>
+        <akka.version>2.6.8</akka.version>
+        <scala.binary.version>2.13</scala.binary.version>
     </properties>
 
     <dependencyManagement>
@@ -330,6 +332,11 @@
                 <groupId>tech.uom.lib</groupId>
                 <artifactId>uom-lib-common</artifactId>
                 <version>2.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>com.typesafe.akka</groupId>
+                <artifactId>akka-actor-typed_${scala.binary.version}</artifactId>
+                <version>${akka.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
