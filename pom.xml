@@ -25,8 +25,8 @@
 
     <parent>
         <groupId>com.anrisoftware.globalpom</groupId>
-        <artifactId>globalpom-groovy</artifactId>
-        <version>4.5.2</version>
+        <artifactId>globalpom-groovy-gmavenplus</artifactId>
+        <version>4.6.0-SNAPSHOT</version>
     </parent>
 
     <groupId>com.anrisoftware.dwarfhustle</groupId>
@@ -61,7 +61,7 @@
 
     <properties>
         <license.custom.license.template>com/mycila/maven/plugin/license/templates/GPL-3.txt</license.custom.license.template>
-        <project.custom.globalpom.version>4.5.2</project.custom.globalpom.version>
+        <project.custom.globalpom.version>4.6.0-SNAPSHOT</project.custom.globalpom.version>
         <project.custom.orientdb.version>3.0.31</project.custom.orientdb.version>
         <project.custom.jme3.version>3.3.2-stable</project.custom.jme3.version>
         <project.custom.javafx.version>11.0.2</project.custom.javafx.version>
@@ -227,15 +227,16 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <compilerId>groovy-eclipse-compiler</compilerId>
                     <source>${project.custom.source.source}</source>
                     <target>${project.custom.source.target}</target>
-                    <compilerId>groovy-eclipse-compiler</compilerId>
-                    <verbose>true</verbose>
-                    <compilerArguments>
-                        <javaAgentClass>lombok.launch.Agent</javaAgentClass>
-                    </compilerArguments>
-                    <fork>true</fork>
+                    <useIncrementalCompilation>false</useIncrementalCompilation>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${project.custom.lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -245,20 +246,14 @@
                     </dependency>
                     <dependency>
                         <groupId>org.codehaus.groovy</groupId>
-                        <artifactId>groovy-eclipse-compiler</artifactId>
-                        <version>${project.custom.groovy-eclipse-compiler.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.codehaus.groovy</groupId>
-                        <artifactId>groovy-eclipse-batch</artifactId>
-                        <version>${project.custom.groovy-eclipse-batch.version}</version>
+                        <artifactId>groovy</artifactId>
+                        <version>${project.custom.groovy.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok-maven-plugin</artifactId>
-                <version>1.18.10.0</version>
                 <executions>
                     <execution>
                         <phase>generate-sources</phase>
@@ -267,24 +262,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <doclint>none</doclint>
-                        </configuration>
-                    </execution>
-                </executions>
-                <configuration>
-                    <doclint>none</doclint>
-                    <failOnError>false</failOnError>
-                </configuration>
             </plugin>
         </plugins>
     </build>
