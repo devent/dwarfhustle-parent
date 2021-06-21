@@ -121,6 +121,11 @@
             </dependency>
             <dependency>
                 <groupId>com.orientechnologies</groupId>
+                <artifactId>orientdb-core</artifactId>
+                <version>${project.custom.orientdb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.orientechnologies</groupId>
                 <artifactId>orientdb-client</artifactId>
                 <version>${project.custom.orientdb.version}</version>
             </dependency>
