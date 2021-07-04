@@ -200,6 +200,11 @@
                 <version>${project.custom.jme3.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.jmonkeyengine</groupId>
+                <artifactId>jme3-niftygui</artifactId>
+                <version>${project.custom.jme3.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.github.stephengold</groupId>
                 <artifactId>Minie</artifactId>
                 <version>3.0.0</version>
