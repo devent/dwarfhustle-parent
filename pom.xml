@@ -229,6 +229,11 @@
                 <artifactId>javafx-base</artifactId>
                 <version>${project.custom.javafx.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-controls</artifactId>
+                <version>${project.custom.javafx.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
