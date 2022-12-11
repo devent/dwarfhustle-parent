@@ -1,0 +1,87 @@
+<!--
+
+    Dwarf Hustle :: OrientDB - Dependencies - Manages the dependencies for the usage of OrientDB.
+    Copyright © 2022 Erwin Müller (erwin.mueller@anrisoftware.com)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.anrisoftware.dwarfhustle</groupId>
+        <artifactId>dwarfhustle-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>dwarfhustle-orientdb-dependencies</artifactId>
+    <packaging>pom</packaging>
+    <name>Dwarf Hustle :: OrientDB - Dependencies</name>
+    <description>Manages the dependencies for the usage of OrientDB.</description>
+    <inceptionYear>2022</inceptionYear>
+
+    <properties>
+    	<globalpom.custom.home>https://project.anrisoftware.com/projects/dwarfhustle-parent</globalpom.custom.home>
+        <license.custom.license.template>src/main/resources/AGPL-3.txt</license.custom.license.template>
+        <globalpom.custom.year>2022</globalpom.custom.year>
+    	<!-- Versions -->
+        <globalpom.custom.anrisoftware.version>4.6.3</globalpom.custom.anrisoftware.version>
+        <dwarfhustle.custom.orientdb.version>3.2.13</dwarfhustle.custom.orientdb.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.orientechnologies</groupId>
+                <artifactId>orientdb-core</artifactId>
+                <version>${dwarfhustle.custom.orientdb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.orientechnologies</groupId>
+                <artifactId>orientdb-client</artifactId>
+                <version>${dwarfhustle.custom.orientdb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.orientechnologies</groupId>
+                <artifactId>orientdb-graphdb</artifactId>
+                <version>${dwarfhustle.custom.orientdb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.orientechnologies</groupId>
+                <artifactId>orientdb-server</artifactId>
+                <version>${dwarfhustle.custom.orientdb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.orientechnologies</groupId>
+                <artifactId>orientdb-lucene</artifactId>
+                <version>${dwarfhustle.custom.orientdb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.orientechnologies</groupId>
+                <artifactId>orientdb-object</artifactId>
+                <version>${dwarfhustle.custom.orientdb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.orientechnologies</groupId>
+                <artifactId>orientdb-spatial</artifactId>
+                <version>3.0.0RC2</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

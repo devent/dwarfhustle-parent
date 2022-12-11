@@ -1,19 +1,19 @@
 <!--
 
-    Dwarf Hustle :: Parent POM - Manages the dependencies of the game.
-    Copyright © 2019 Erwin Müller (erwin.mueller@anrisoftware.com)
+    Dwarf Hustle :: Parent POM - Manages the compile dependencies of the game.
+    Copyright © 2022 Erwin Müller (erwin.mueller@anrisoftware.com)
 
     This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
+    it under the terms of the GNU Affero General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+    GNU Affero General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
+    You should have received a copy of the GNU Affero General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 -->
@@ -25,8 +25,8 @@
 
     <parent>
         <groupId>com.anrisoftware.globalpom</groupId>
-        <artifactId>globalpom-groovy-gmavenplus</artifactId>
-        <version>4.6.0-SNAPSHOT</version>
+        <artifactId>globalpom-parent</artifactId>
+        <version>4.6.3</version>
     </parent>
 
     <groupId>com.anrisoftware.dwarfhustle</groupId>
@@ -34,13 +34,26 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Dwarf Hustle :: Parent POM</name>
-    <description>Manages the dependencies of the game.</description>
-    <inceptionYear>2019</inceptionYear>
+    <description>Manages the compile dependencies of the game.</description>
+    <inceptionYear>2022</inceptionYear>
+
+    <modules>
+        <module>dwarfhustle-jme3-dependencies</module>
+        <module>dwarfhustle-orientdb-dependencies</module>
+    </modules>
+
+    <properties>
+    	<globalpom.custom.home>https://project.anrisoftware.com/projects/dwarfhustle-parent</globalpom.custom.home>
+        <license.custom.license.template>src/main/resources/AGPL-3.txt</license.custom.license.template>
+        <globalpom.custom.year>2022</globalpom.custom.year>
+    	<!-- Versions -->
+        <globalpom.custom.anrisoftware.version>4.6.3</globalpom.custom.anrisoftware.version>
+    </properties>
 
     <licenses>
         <license>
-            <name>GNU General Public License (GPL)</name>
-            <url>http://www.gnu.org/licenses/gpl.txt</url>
+            <name>GNU Affero General Public License (AGPLv3)</name>
+            <url>https://www.gnu.org/licenses/agpl-3.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -59,268 +72,116 @@
         </developer>
     </developers>
 
-    <properties>
-        <license.custom.license.template>com/mycila/maven/plugin/license/templates/GPL-3.txt</license.custom.license.template>
-        <project.custom.globalpom.version>4.6.0-SNAPSHOT</project.custom.globalpom.version>
-        <project.custom.orientdb.version>3.1.11</project.custom.orientdb.version>
-        <project.custom.jme3.version>3.3.2-stable</project.custom.jme3.version>
-        <project.custom.javafx.version>11.0.2</project.custom.javafx.version>
-    </properties>
+    <profiles>
+        <profile>
+            <id>private-repository</id>
+            <distributionManagement>
+                <site>
+		            <id>site-distribution-id</id>
+		            <url>${site.distribution.url}</url>
+                </site>
+                <repository>
+                    <id>private_repo_releases</id>
+                    <url>https://maven.anrisoftware.com/repository/internal/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>private_repo_snapshots</id>
+                    <url>https://maven.anrisoftware.com/repository/snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.anrisoftware.globalpom</groupId>
-                <artifactId>globalpom-groovytestutils</artifactId>
-                <version>${project.custom.globalpom.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.anrisoftware.globalpom</groupId>
-                <artifactId>globalpom-log</artifactId>
-                <version>${project.custom.globalpom.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.anrisoftware.globalpom</groupId>
-                <artifactId>globalpomutils-exec</artifactId>
-                <version>${project.custom.globalpom.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.anrisoftware.globalpom</groupId>
-                <artifactId>globalpomutils-threads</artifactId>
-                <version>${project.custom.globalpom.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.anrisoftware.resources</groupId>
-                <artifactId>resources-texts</artifactId>
-                <version>${project.custom.globalpom.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.anrisoftware.propertiesutils</groupId>
-                <artifactId>propertiesutils-contextproperties</artifactId>
-                <version>${project.custom.globalpom.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.anrisoftware.resources</groupId>
-                <artifactId>resources-images</artifactId>
-                <version>${project.custom.globalpom.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.anrisoftware.resources</groupId>
-                <artifactId>resources-api</artifactId>
-                <version>${project.custom.globalpom.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.anrisoftware.resources</groupId>
-                <artifactId>resources-getbundle</artifactId>
-                <version>${project.custom.globalpom.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.anrisoftware.resources</groupId>
-                <artifactId>resources-binary</artifactId>
-                <version>${project.custom.globalpom.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.orientechnologies</groupId>
-                <artifactId>orientdb-core</artifactId>
-                <version>${project.custom.orientdb.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.orientechnologies</groupId>
-                <artifactId>orientdb-client</artifactId>
-                <version>${project.custom.orientdb.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.orientechnologies</groupId>
-                <artifactId>orientdb-graphdb</artifactId>
-                <version>${project.custom.orientdb.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.orientechnologies</groupId>
-                <artifactId>orientdb-server</artifactId>
-                <version>${project.custom.orientdb.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.orientechnologies</groupId>
-                <artifactId>orientdb-lucene</artifactId>
-                <version>${project.custom.orientdb.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.orientechnologies</groupId>
-                <artifactId>orientdb-object</artifactId>
-                <version>${project.custom.orientdb.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.orientechnologies</groupId>
-                <artifactId>orientdb-spatial</artifactId>
-                <version>2.2.27</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jmonkeyengine</groupId>
-                <artifactId>jme3-core</artifactId>
-                <version>${project.custom.jme3.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jmonkeyengine</groupId>
-                <artifactId>jme3-desktop</artifactId>
-                <version>${project.custom.jme3.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jmonkeyengine</groupId>
-                <artifactId>jme3-lwjgl3</artifactId>
-                <version>${project.custom.jme3.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jmonkeyengine</groupId>
-                <artifactId>jme3-examples</artifactId>
-                <version>${project.custom.jme3.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jmonkeyengine</groupId>
-                <artifactId>jme3-terrain</artifactId>
-                <version>${project.custom.jme3.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jmonkeyengine</groupId>
-                <artifactId>jme3-bullet</artifactId>
-                <version>${project.custom.jme3.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jmonkeyengine</groupId>
-                <artifactId>jme3-bullet-native</artifactId>
-                <version>${project.custom.jme3.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jmonkeyengine</groupId>
-                <artifactId>jme3-jbullet</artifactId>
-                <version>${project.custom.jme3.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jmonkeyengine</groupId>
-                <artifactId>jme3-testdata</artifactId>
-                <version>${project.custom.jme3.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jmonkeyengine</groupId>
-                <artifactId>jme3-niftygui</artifactId>
-                <version>${project.custom.jme3.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.stephengold</groupId>
-                <artifactId>Minie</artifactId>
-                <version>3.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.jayfella</groupId>
-                <artifactId>jme-jfx-11</artifactId>
-                <version>1.1.5.dwarfhustle-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-fxml</artifactId>
-                <version>${project.custom.javafx.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-swing</artifactId>
-                <version>${project.custom.javafx.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-base</artifactId>
-                <version>${project.custom.javafx.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-web</artifactId>
-                <version>${project.custom.javafx.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-controls</artifactId>
-                <version>${project.custom.javafx.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+        <profile>
+            <id>osssonatype</id>
+            <distributionManagement>
+                <site>
+		            <id>site-distribution-id</id>
+		            <url>${site.distribution.url}</url>
+                </site>
+                <repository>
+                    <id>osssonatype_releases</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+                </repository>
+                <snapshotRepository>
+                    <id>osssonatype_snapshots</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+            </distributionManagement>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>osssonatype_releases</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>${project.custom.source.source}</source>
-                    <target>${project.custom.source.target}</target>
-                    <useIncrementalCompilation>false</useIncrementalCompilation>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>${project.custom.lombok.version}</version>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
-                <dependencies>
-                    <dependency>
+        <profile>
+            <!-- Activate profile with -Psign-artifact -->
+            <id>sign-artifact</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <!-- Skip signing -Pno-sign -->
+            <id>no-sign</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <!-- De-lombok with -Pdelombok -->
+            <id>delombok</id>
+            <build>
+                <plugins>
+                    <plugin>
                         <groupId>org.projectlombok</groupId>
-                        <artifactId>lombok</artifactId>
-                        <version>${project.custom.lombok.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.codehaus.groovy</groupId>
-                        <artifactId>groovy</artifactId>
-                        <version>${project.custom.groovy.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <plugin>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>delombok</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+                        <artifactId>lombok-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>delombok</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
-        <pluginManagement>
-            <plugins>
-                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-                <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>1.0.0</version>
-                    <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>
-                                            org.apache.maven.plugins
-                                        </groupId>
-                                        <artifactId>
-                                            maven-compiler-plugin
-                                        </artifactId>
-                                        <versionRange>
-                                            [3.8.1,)
-                                        </versionRange>
-                                        <goals>
-                                            <goal>compile</goal>
-                                            <goal>testCompile</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore></ignore>
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
+    </profiles>
 
 </project>
