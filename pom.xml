@@ -31,7 +31,7 @@
 
     <groupId>com.anrisoftware.dwarfhustle</groupId>
     <artifactId>dwarfhustle-parent</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Dwarf Hustle :: Parent POM</name>
     <description>Manages the compile dependencies of the game.</description>
@@ -71,6 +71,16 @@
             <timezone>Europe/Berlin</timezone>
         </developer>
     </developers>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.anrisoftware.globalpom</groupId>
+                <artifactId>globalpom-groovytestutils</artifactId>
+                <version>${globalpom.custom.anrisoftware.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <profiles>
         <profile>
