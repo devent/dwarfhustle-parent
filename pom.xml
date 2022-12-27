@@ -43,12 +43,12 @@
     </modules>
 
     <properties>
-    	<globalpom.custom.home>https://project.anrisoftware.com/projects/dwarfhustle-parent</globalpom.custom.home>
+        <globalpom.custom.home>https://project.anrisoftware.com/projects/dwarfhustle-parent</globalpom.custom.home>
         <license.custom.license.template>src/main/resources/AGPL-3.txt</license.custom.license.template>
         <globalpom.custom.year>2022</globalpom.custom.year>
         <globalpom.custom.source.source>17</globalpom.custom.source.source>
         <globalpom.custom.source.target>17</globalpom.custom.source.target>
-    	<!-- Versions -->
+        <!-- Versions -->
         <globalpom.custom.anrisoftware.version>4.6.3</globalpom.custom.anrisoftware.version>
         <globalpom.custom.akka.version>2.7.0</globalpom.custom.akka.version>
         <scala.binary.version>3</scala.binary.version>
@@ -109,6 +109,11 @@
                 <artifactId>commons-jcs3-jcache</artifactId>
                 <version>3.1</version>
             </dependency>
+            <dependency>
+                <groupId>org.lable.oss.uniqueid</groupId>
+                <artifactId>uniqueid-core</artifactId>
+                <version>4.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -117,8 +122,8 @@
             <id>private-repository</id>
             <distributionManagement>
                 <site>
-		            <id>site-distribution-id</id>
-		            <url>${site.distribution.url}</url>
+                    <id>site-distribution-id</id>
+                    <url>${site.distribution.url}</url>
                 </site>
                 <repository>
                     <id>private_repo_releases</id>
@@ -135,8 +140,8 @@
             <id>osssonatype</id>
             <distributionManagement>
                 <site>
-		            <id>site-distribution-id</id>
-		            <url>${site.distribution.url}</url>
+                    <id>site-distribution-id</id>
+                    <url>${site.distribution.url}</url>
                 </site>
                 <repository>
                     <id>osssonatype_releases</id>
