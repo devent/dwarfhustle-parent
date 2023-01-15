@@ -1,7 +1,7 @@
 <!--
 
     Dwarf Hustle :: OrientDB - Dependencies - Manages the dependencies for the usage of OrientDB.
-    Copyright © 2022 Erwin Müller (erwin.mueller@anrisoftware.com)
+    Copyright © 2023 Erwin Müller (erwin.mueller@anrisoftware.com)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published by
@@ -38,7 +38,6 @@
     <properties>
     	<globalpom.custom.home>https://project.anrisoftware.com/projects/dwarfhustle-parent</globalpom.custom.home>
         <license.custom.license.template>src/main/resources/AGPL-3.txt</license.custom.license.template>
-        <globalpom.custom.year>2022</globalpom.custom.year>
     	<!-- Versions -->
         <globalpom.custom.anrisoftware.version>4.6.3</globalpom.custom.anrisoftware.version>
         <dwarfhustle.custom.orientdb.version>3.2.13</dwarfhustle.custom.orientdb.version>

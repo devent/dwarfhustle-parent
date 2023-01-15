@@ -1,7 +1,7 @@
 <!--
 
     Dwarf Hustle :: Parent POM - Manages the compile dependencies of the game.
-    Copyright © 2022 Erwin Müller (erwin.mueller@anrisoftware.com)
+    Copyright © 2023 Erwin Müller (erwin.mueller@anrisoftware.com)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published by
@@ -45,7 +45,7 @@
     <properties>
         <globalpom.custom.home>https://project.anrisoftware.com/projects/dwarfhustle-parent</globalpom.custom.home>
         <license.custom.license.template>src/main/resources/AGPL-3.txt</license.custom.license.template>
-        <globalpom.custom.year>2022</globalpom.custom.year>
+        <globalpom.custom.year>2023</globalpom.custom.year>
         <globalpom.custom.source.source>17</globalpom.custom.source.source>
         <globalpom.custom.source.target>17</globalpom.custom.source.target>
         <!-- Versions -->
