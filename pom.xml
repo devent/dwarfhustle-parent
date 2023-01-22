@@ -53,6 +53,7 @@
         <globalpom.custom.akka.version>2.7.0</globalpom.custom.akka.version>
         <scala.binary.version>3</scala.binary.version>
         <dwarfhustle.custom.antlr.version>4.11.1</dwarfhustle.custom.antlr.version>
+        <globalpom.custom.fasterxml.version>2.14.1</globalpom.custom.fasterxml.version>
     </properties>
 
     <licenses>
@@ -82,6 +83,32 @@
             <dependency>
                 <groupId>com.anrisoftware.globalpom</groupId>
                 <artifactId>globalpom-groovytestutils</artifactId>
+                <version>${globalpom.custom.anrisoftware.version}</version>
+            </dependency>
+            <!-- Resources -->
+            <dependency>
+                <groupId>com.anrisoftware.resources</groupId>
+                <artifactId>resources-images</artifactId>
+                <version>${globalpom.custom.anrisoftware.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anrisoftware.resources</groupId>
+                <artifactId>resources-api</artifactId>
+                <version>${globalpom.custom.anrisoftware.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anrisoftware.resources</groupId>
+                <artifactId>resources-getbundle</artifactId>
+                <version>${globalpom.custom.anrisoftware.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anrisoftware.resources</groupId>
+                <artifactId>resources-texts</artifactId>
+                <version>${globalpom.custom.anrisoftware.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anrisoftware.resources</groupId>
+                <artifactId>resources-binary</artifactId>
                 <version>${globalpom.custom.anrisoftware.version}</version>
             </dependency>
             <dependency>
@@ -130,6 +157,11 @@
                 <artifactId>antlr4-runtime</artifactId>
                 <version>${dwarfhustle.custom.antlr.version}</version>
             </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>${globalpom.custom.fasterxml.version}</version>
+        </dependency>
         </dependencies>
     </dependencyManagement>
 
