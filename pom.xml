@@ -157,11 +157,16 @@
                 <artifactId>antlr4-runtime</artifactId>
                 <version>${dwarfhustle.custom.antlr.version}</version>
             </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.dataformat</groupId>
-            <artifactId>jackson-dataformat-yaml</artifactId>
-            <version>${globalpom.custom.fasterxml.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-yaml</artifactId>
+                <version>${globalpom.custom.fasterxml.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${globalpom.custom.fasterxml.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
