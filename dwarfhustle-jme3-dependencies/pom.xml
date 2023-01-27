@@ -43,7 +43,7 @@
         <dwarfhustle.custom.jme3.version>3.5.2-stable</dwarfhustle.custom.jme3.version>
         <dwarfhustle.custom.minie.version>6.2.0</dwarfhustle.custom.minie.version>
         <dwarfhustle.custom.jmh.version>1.32</dwarfhustle.custom.jmh.version>
-        <dwarfhustle.custom.javafx.version>16</dwarfhustle.custom.javafx.version>
+        <dwarfhustle.custom.javafx.version>19</dwarfhustle.custom.javafx.version>
     </properties>
 
     <dependencyManagement>
@@ -96,7 +96,7 @@
             <dependency>
                 <groupId>com.anrisoftware.jmejfx</groupId>
                 <artifactId>jme-jfx</artifactId>
-                <version>1.0.0</version>
+                <version>1.19.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.openjfx</groupId>

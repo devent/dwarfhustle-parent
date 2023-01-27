@@ -167,6 +167,11 @@
                 <artifactId>jackson-datatype-jsr310</artifactId>
                 <version>${globalpom.custom.fasterxml.version}</version>
             </dependency>
+            <dependency>
+                <groupId>info.picocli</groupId>
+                <artifactId>picocli</artifactId>
+                <version>4.7.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
