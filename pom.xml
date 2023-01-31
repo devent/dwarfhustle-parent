@@ -54,6 +54,7 @@
         <scala.binary.version>3</scala.binary.version>
         <dwarfhustle.custom.antlr.version>4.11.1</dwarfhustle.custom.antlr.version>
         <globalpom.custom.fasterxml.version>2.14.1</globalpom.custom.fasterxml.version>
+        <globalpom.custom.groovy.version>3.0.14</globalpom.custom.groovy.version>
     </properties>
 
     <licenses>
@@ -83,6 +84,12 @@
             <dependency>
                 <groupId>com.anrisoftware.globalpom</groupId>
                 <artifactId>globalpom-groovytestutils</artifactId>
+                <version>${globalpom.custom.anrisoftware.version}</version>
+            </dependency>
+            <!-- globalpomutils -->
+            <dependency>
+                <groupId>com.anrisoftware.globalpom</groupId>
+                <artifactId>globalpomutils-threads</artifactId>
                 <version>${globalpom.custom.anrisoftware.version}</version>
             </dependency>
             <!-- Resources -->
