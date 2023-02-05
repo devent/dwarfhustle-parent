@@ -55,6 +55,7 @@
         <dwarfhustle.custom.antlr.version>4.11.1</dwarfhustle.custom.antlr.version>
         <globalpom.custom.fasterxml.version>2.14.1</globalpom.custom.fasterxml.version>
         <globalpom.custom.groovy.version>3.0.14</globalpom.custom.groovy.version>
+        <dwarfhustle.custom.geotools.version>28.1</dwarfhustle.custom.geotools.version>
     </properties>
 
     <licenses>
@@ -178,6 +179,21 @@
                 <groupId>info.picocli</groupId>
                 <artifactId>picocli</artifactId>
                 <version>4.7.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.geotools</groupId>
+                <artifactId>gt-metadata</artifactId>
+                <version>${dwarfhustle.custom.geotools.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.geotools</groupId>
+                <artifactId>gt-shapefile</artifactId>
+                <version>${dwarfhustle.custom.geotools.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.geotools</groupId>
+                <artifactId>gt-swing</artifactId>
+                <version>${dwarfhustle.custom.geotools.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
