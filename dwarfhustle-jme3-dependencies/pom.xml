@@ -40,7 +40,7 @@
         <license.custom.license.template>src/main/resources/AGPL-3.txt</license.custom.license.template>
         <!-- Versions -->
         <globalpom.custom.anrisoftware.version>4.6.3</globalpom.custom.anrisoftware.version>
-        <dwarfhustle.custom.jme3.version>3.5.2-stable</dwarfhustle.custom.jme3.version>
+        <dwarfhustle.custom.jme3.version>3.6.0-stable</dwarfhustle.custom.jme3.version>
         <dwarfhustle.custom.minie.version>6.2.0</dwarfhustle.custom.minie.version>
         <dwarfhustle.custom.jmh.version>1.32</dwarfhustle.custom.jmh.version>
         <dwarfhustle.custom.javafx.version>19</dwarfhustle.custom.javafx.version>
@@ -60,12 +60,12 @@
             </dependency>
             <dependency>
                 <groupId>org.jmonkeyengine</groupId>
-                <artifactId>jme3-lwjgl3</artifactId>
+                <artifactId>jme3-examples</artifactId>
                 <version>${dwarfhustle.custom.jme3.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.jmonkeyengine</groupId>
-                <artifactId>jme3-examples</artifactId>
+                <artifactId>jme3-lwjgl3</artifactId>
                 <version>${dwarfhustle.custom.jme3.version}</version>
             </dependency>
             <dependency>
@@ -125,68 +125,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.jmonkeyengine</groupId>
-            <artifactId>jme3-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jmonkeyengine</groupId>
-            <artifactId>jme3-desktop</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jmonkeyengine</groupId>
-            <artifactId>jme3-lwjgl3</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jmonkeyengine</groupId>
-            <artifactId>jme3-examples</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jmonkeyengine</groupId>
-            <artifactId>jme3-terrain</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jmonkeyengine</groupId>
-            <artifactId>jme3-jbullet</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jmonkeyengine</groupId>
-            <artifactId>jme3-testdata</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jmonkeyengine</groupId>
-            <artifactId>jme3-niftygui</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.stephengold</groupId>
-            <artifactId>Minie</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.anrisoftware.jmejfx</groupId>
-            <artifactId>jme-jfx</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-swing</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-base</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>
