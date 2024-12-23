@@ -26,7 +26,7 @@
     <parent>
         <groupId>com.anrisoftware.globalpom</groupId>
         <artifactId>globalpom-groovy-gmavenplus</artifactId>
-        <version>4.7.0</version>
+        <version>4.8.0</version>
     </parent>
 
     <groupId>com.anrisoftware.dwarfhustle</groupId>
@@ -45,11 +45,9 @@
     <properties>
         <globalpom.custom.home>https://project.anrisoftware.com/projects/dwarfhustle-parent</globalpom.custom.home>
         <license.custom.license.template>src/main/resources/AGPL-3.txt</license.custom.license.template>
-        <globalpom.custom.current.year>2024</globalpom.custom.current.year>
-        <globalpom.custom.source.source>17</globalpom.custom.source.source>
-        <globalpom.custom.source.target>17</globalpom.custom.source.target>
+        <globalpom.custom.current.year>2025</globalpom.custom.current.year>
         <!-- Versions -->
-        <globalpom.custom.lombok.version>edge-SNAPSHOT</globalpom.custom.lombok.version>
+        <globalpom.custom.lombok.version>1.18.36</globalpom.custom.lombok.version>
         <scala.binary.version>3</scala.binary.version>
         <dwarfhustle.custom.antlr.version>4.11.1</dwarfhustle.custom.antlr.version>
         <dwarfhustle.custom.geotools.version>28.1</dwarfhustle.custom.geotools.version>
@@ -245,6 +243,24 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${globalpom.custom.source.source}</source>
+                    <target>${globalpom.custom.source.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${globalpom.custom.lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
     <profiles>
