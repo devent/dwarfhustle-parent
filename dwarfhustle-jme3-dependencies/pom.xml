@@ -1,7 +1,7 @@
 <!--
 
     Dwarf Hustle :: JME3 - Dependencies - Manages the dependencies for the usage of JMonkeyEngine3.
-    Copyright © 2022-2024 Erwin Müller (erwin.mueller@anrisoftware.com)
+    Copyright © 2022-2025 Erwin Müller (erwin.mueller@anrisoftware.com)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published by
@@ -39,9 +39,9 @@
         <globalpom.custom.home>https://project.anrisoftware.com/projects/dwarfhustle-parent</globalpom.custom.home>
         <license.custom.license.template>src/main/resources/AGPL-3.txt</license.custom.license.template>
         <!-- Versions -->
-        <dwarfhustle.custom.jme3.version>3.6.0-stable</dwarfhustle.custom.jme3.version>
-        <dwarfhustle.custom.minie.version>6.2.0</dwarfhustle.custom.minie.version>
-        <dwarfhustle.custom.jmh.version>1.32</dwarfhustle.custom.jmh.version>
+        <dwarfhustle.custom.jme3.version>3.7.0-stable</dwarfhustle.custom.jme3.version>
+        <dwarfhustle.custom.minie.version>8.2.0</dwarfhustle.custom.minie.version>
+        <dwarfhustle.custom.jmh.version>1.37</dwarfhustle.custom.jmh.version>
         <dwarfhustle.custom.javafx.version>19</dwarfhustle.custom.javafx.version>
     </properties>
 
